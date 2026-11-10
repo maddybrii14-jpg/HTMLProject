@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+
+    <main class="dashboard">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <span class="eyebrow">CAMPUS ADMINISTRATION</span>
+                <h1>Welcome to Student Management System</h1>
+                <p>Manage student records and keep your campus directory organized.</p>
+            </div>
+
+            <div class="date-card" id="currentDate"></div>
+        </header>
+
+        <!-- Summary Cards -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-icon purple">♙</div>
+                <div>
+                    <span>Total students</span>
+                    <h2 id="totalStudents">4</h2>
+                </div>
+                <small>In your directory</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">▤</div>
+                <div>
+                    <span>Courses represented</span>
+                    <h2 id="totalCourses">4</h2>
+                </div>
+                <small>Unique programs</small>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+
+            <!-- Add Student Form -->
+            <div class="form-card">
+                <div class="section-heading">
+                    <div class="stat-icon purple">+</div>
+                    <div>
+                        <h3>Add a student</h3>
+                        <p>Enter the student's details below.</p>
+                    </div>
+                </div>
+
+                <form id="studentForm">
+                    <label for="studentName">Student name *</label>
+                    <input type="text" id="studentName"
+                        placeholder="e.g. Jordan Lee" required>
+
+                    <label for="studentEmail">Email address *</label>
+                    <input type="email" id="studentEmail"
+                        placeholder="jordan@example.com" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="studentAge">Age *</label>
+                            <input type="number" id="studentAge"
+                                placeholder="e.g. 20" min="1" required>
+                        </div>
+
+                        <div>
+                            <label for="studentCourse">Course *</label>
+                            <input type="text" id="studentCourse"
+                                placeholder="e.g. Design" required>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="add-btn" id="submitBtn">
+                            + Add student
+                        </button>
+                        <button type="reset" class="cancel-btn" id="cancelBtn">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+
+                <small class="required-note">ⓘ All fields are required.</small>
+            </div>
+
+            <!-- Student Directory -->
+            <div class="directory-card">
+                <div class="directory-header">
+                    <div class="section-heading">
+                        <div class="stat-icon green">☰</div>
+                        <div>
+                            <h3>Student directory</h3>
+                            <p>Manage your enrolled students.</p>
+                        </div>
+                    </div>
+
+                    <input type="search" id="searchInput"
+                        placeholder="⌕  Search students...">
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STUDENT</th>
+                                <th>AGE</th>
+                                <th>COURSE</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentTable">
+                            <!-- JavaScript adds student rows here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="directory-footer">
+                    <span id="studentCount">Showing 4 of 4 students</span>
+                    <span class="sync-status">● Synced with API</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div>
+                <strong>About</strong>
+                <p>Manage student records in one convenient place.</p>
+            </div>
+
+            <div>
+                <strong>Contact</strong>
+                <p>For assistance, contact your campus administrator.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="Project.js"></script>
+</body>
+</html>
+
+
